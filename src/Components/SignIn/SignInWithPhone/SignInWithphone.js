@@ -18,7 +18,9 @@ const SignIn = () => {
     let otps = e.target.value;
     setOtp(otps);
     console.log(otp);
-    verifyOtp();
+    // if(otp===6){
+      
+    // }
   };
   const verifyOtp = () => {
     let confirmationResult = window.confirmationResult;
@@ -95,15 +97,16 @@ const SignIn = () => {
           />
         </div>
         {expandForm === true ? (
-          <div className="mb-3">
+          <div className="mb-3 ">
             <label className="form-label">Otp</label>
             <input
               type="number"
               className="form-control"
               id="exampleInputPassword1"
-              name="password"
-              onClick={OtpToRegister}
+              name="otp"
+              onChange={OtpToRegister}
             />
+          <button className="btn btn-primary mx-5 my-5 p-2 ml-5" onClick={verifyOtp}>click to continue</button>
           </div>
         ) : null}
         {expandForm === false ? (
