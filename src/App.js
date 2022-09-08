@@ -1,19 +1,18 @@
-import React from 'react'
-import SignIn from './Components/SignIn/SignIn/SignIn'
-import SignInWithPhone from './Components/SignIn/SignInWithPhone/SignInWithphone'
-import SignInWithGoogle from './Components/SignIn/SignInWithGoogle/SignInWithGoogle';
-import SignInWithApple from './Components/SignIn/SignInWithApple/SignInWithApple';
+import React from "react";
+import SignIn from "./Components/SignInWithEmailAndPassword/SignIn";
+import SignInWithPhone from "./Components/SignInWithPhone/SignInWithphone";
+import SignInWithGoogle from "./Components/SignInWithGoogle/SignInWithGoogle";
+import SignInWithApple from "./Components/SignInWithApple/SignInWithApple";
 
 const App = () => {
   return (
     <div>
-
-      {/* <SignIn/> */}
+      <SignIn/>
       {/* <SignInWithPhone/> */}
-{/* <SignInWithGoogle/> */}
-<SignInWithApple/>
+      {/* <SignInWithGoogle/> */}
+      {/* <SignInWithApple/> */}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

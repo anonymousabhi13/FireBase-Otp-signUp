@@ -4,15 +4,16 @@ import { authentication, } from "../Utility/Configuration";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  // console.log(email,password);
+
   const SubmitHandler = (e) => {
     e.preventDefault();
-
-    console.log(email, password);
-    authentication
-      .createUserWithEmailAndPassword(email, password)
+   
+    createUserWithEmailAndPassword(authentication,email, password)
       .then((userCredential) => {
+        // Signed in
         console.log(userCredential)
       })
       .catch((error) => {
@@ -20,10 +21,15 @@ const SignIn = () => {
       });
   };
   const PasswordTORegister = (e) => {
-    setPassword(e.target.value);
+    const password = e.target.value;
+    
+    setPassword(password);
+    console.log(password);
   };
-  const NumberTORegister = (e) => {
-    setEmail(e.target.value);
+  const emailTORegister = (e) => {
+    const email = e.target.value;
+    setEmail(email);
+    console.log(email);
   };
 
   return (
@@ -39,7 +45,7 @@ const SignIn = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
-            onChange={NumberTORegister}
+            onChange={emailTORegister}
           />
         </div>
         <div className="mb-3">
